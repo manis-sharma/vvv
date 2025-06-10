@@ -1,131 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Clip Gods</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000000;
-      color: #FFFFFF;
+      padding: 0;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #FFD700;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 50px;
-      background-color: #000000;
+      padding: 20px 60px;
+      background-color: #000;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    .navbar .logo {
+
+    .logo {
       display: flex;
       align-items: center;
+      gap: 10px;
+      font-size: 1.5em;
+      font-weight: 600;
     }
-    .navbar .logo span {
-      margin-right: 10px;
-    }
-    .navbar .logo img {
+
+    .logo img {
       width: 40px;
       height: 40px;
       border-radius: 50%;
     }
-    .navbar a {
-      color: #FFD700;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+
+    .nav-links a {
+      margin-left: 30px;
+      font-weight: 500;
     }
+
     .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.6)), url('hero-bg.jpg') center/cover no-repeat;
       text-align: center;
-      padding: 100px 20px;
-      background: url('hero-bg.jpg') no-repeat center center/cover;
+      padding: 0 20px;
     }
+
     .hero h1 {
-      font-size: 3.5em;
+      font-size: 3rem;
+      color: #FFD700;
       margin-bottom: 20px;
     }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
     .cta-button {
       background-color: #FFD700;
-      color: #000000;
-      padding: 15px 30px;
+      color: #000;
+      padding: 15px 35px;
       border: none;
-      font-size: 1.2em;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 30px;
       cursor: pointer;
-      border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
-    .partners, .benefits, .testimonials, .pricing {
-      padding: 50px 20px;
+
+    .cta-button:hover {
+      background-color: #e6c200;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
       text-align: center;
     }
-    .partners img {
-      margin: 0 20px;
-      height: 50px;
+
+    section h2 {
+      color: #FFD700;
+      margin-bottom: 30px;
+      font-size: 2em;
     }
+
     .benefits ul {
       list-style: none;
       padding: 0;
     }
+
     .benefits li {
       margin: 10px 0;
+      font-size: 1.1rem;
     }
+
+    .partners img {
+      margin: 20px;
+      height: 50px;
+      vertical-align: middle;
+    }
+
     .testimonials p {
-      max-width: 600px;
-      margin: 20px auto;
       font-style: italic;
+      margin: 20px auto;
+      max-width: 600px;
     }
+
     .pricing table {
+      width: 100%;
+      max-width: 600px;
       margin: 20px auto;
       border-collapse: collapse;
     }
-    .pricing td, .pricing th {
-      padding: 10px 20px;
+
+    .pricing th,
+    .pricing td {
       border: 1px solid #FFD700;
+      padding: 15px;
     }
+
     .pricing th {
       background-color: #FFD700;
-      color: #000000;
+      color: #000;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 0.9rem;
+      background-color: #000;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="clipgods.jpg" alt="Clip Gods Logo">
+      <span>Clip Gods</span>
+    </div>
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="logo">
-      <span>Clip Gods</span>
-      <img src="clipgods.jpg" alt="Clip Gods Logo">
-    </div>
-  </div>
-  <div class="hero">
+  </nav>
+
+  <section id="home" class="hero">
     <h1>Drive Success with Clip Gods</h1>
     <p>Unlock exclusive affiliate opportunities and maximize your earnings.</p>
     <button class="cta-button">Get Started</button>
-  </div>
-  <div class="partners">
+  </section>
+
+  <section id="partners" class="partners">
     <h2>Featured Partners</h2>
-    <img src="partner1-logo.png" alt="Partner 1">
-    <img src="partner2-logo.png" alt="Partner 2">
-    <img src="partner3-logo.png" alt="Partner 3">
-  </div>
-  <div class="benefits">
+    <img src="partner1-logo.png" alt="Partner 1 Logo">
+    <img src="partner2-logo.png" alt="Partner 2 Logo">
+    <img src="partner3-logo.png" alt="Partner 3 Logo">
+  </section>
+
+  <section id="about" class="benefits">
     <h2>Key Benefits</h2>
     <ul>
       <li>High commission rates</li>
       <li>Exclusive partner network</li>
       <li>Advanced tracking tools</li>
     </ul>
-  </div>
-  <div class="testimonials">
+  </section>
+
+  <section id="contact" class="testimonials">
     <h2>Testimonials</h2>
     <p>"Clip Gods transformed my earnings potential. Highly recommended!" - Jane D.</p>
     <p>"The support and tools are top-notch. A game-changer!" - John S.</p>
-  </div>
-  <div class="pricing">
+  </section>
+
+  <section id="pricing" class="pricing">
     <h2>Commission Structure</h2>
     <table>
       <tr>
@@ -146,6 +252,12 @@
       </tr>
     </table>
     <button class="cta-button">Join Now</button>
-  </div>
+  </section>
+
+  <footer>
+    © 2025 Clip Gods. All rights reserved.
+  </footer>
+
 </body>
 </html>
+
